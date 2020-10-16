@@ -2,7 +2,8 @@ popper-cdn:
   version: 1.14.7
   remote: //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/
   js:
-    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js: { minified: true }
+    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js:
+      { minified: true }
   license:
     name: The MIT License (MIT)
     url: //github.com/FezVrasta/popper.js/blob/master/LICENSE.md
@@ -15,9 +16,11 @@ bootstrap-cdn:
   remote: //stackpath.bootstrapcdn.com/bootstrap/4.3.1
   css:
     base:
-      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css: { weight: 0, minified: true }
+      //stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css:
+        { weight: 0, minified: true }
   js:
-    //stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js: { minified: true }
+    //stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js:
+      { minified: true }
   license:
     name: The MIT License (MIT)
     url: //github.com/twbs/bootstrap/blob/master/LICENSE
@@ -80,6 +83,13 @@ to-top:
       css/components/to-top.css: {}
   js:
     js/custom/to-top.js: {}
+  dependencies:
+    - core/jquery
+
+ednet-js:
+  version: VERSION
+  js:
+    js/ednet.js: {}
   dependencies:
     - core/jquery
 
@@ -523,7 +533,8 @@ fonts-id-32:
   remote: //fonts.googleapis.com/css
   css:
     theme:
-      https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,900,900i&amp;subset=latin-ext: { type: external }
+      ? https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,900,900i&amp;subset=latin-ext
+      : { type: external }
   license:
     name: SIL Open Font License, 1.1
     url: //scripts.sil.org/OFL
@@ -534,7 +545,8 @@ fonts-id-51:
   remote: //fonts.googleapis.com/css
   css:
     theme:
-      //fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i: { type: external }
+      ? //fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,500,500i,600,600i,700,700i
+      : { type: external }
   license:
     name: SIL Open Font License, 1.1
     url: //scripts.sil.org/OFL
@@ -545,7 +557,8 @@ fonts-sourcecodepro:
   remote: //fonts.googleapis.com/css
   css:
     theme:
-      //fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin,latin-ext: { type: external }
+      //fonts.googleapis.com/css?family=Source+Code+Pro&subset=latin,latin-ext:
+        { type: external }
   license:
     name: SIL Open Font License, 1.1
     url: //scripts.sil.org/OFL
@@ -556,7 +569,8 @@ fonts-pt-serif:
   remote: //fonts.googleapis.com/css
   css:
     theme:
-      //fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,latin-ext: { type: external }
+      ? //fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&subset=latin,latin-ext
+      : { type: external }
   license:
     name: SIL Open Font License, 1.1
     url: //scripts.sil.org/OFL

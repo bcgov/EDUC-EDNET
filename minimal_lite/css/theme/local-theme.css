@@ -1,0 +1,174 @@
+
+/*Front Page */
+.path-frontpage .views-field.views-field-field-event-image, 
+.path-frontpage .view-display-id-block_2 .views-field.views-field-field-image,
+.path-frontpage .view-display-id-block_4 .views-field.views-field-field-image
+{
+    float: right;
+}
+.path-frontpage .views-row {
+    padding: 10px;
+    border: solid 1px #d3d3d336;
+}
+div#block-views-block-highlight {
+    background-color: #fbe5e2;
+}
+.path-frontpage nav#block-minimal-lite-tools {
+    margin-top: 35px;
+}
+.path-frontpage .sidebar__section .block {
+    padding: 0 0 35px 0;
+}
+div#block-views-block-events-calendar-block-4 {
+    background-color: #dcfff3;
+}
+div#block-views-block-job-postings-block-1 {
+    background-color: antiquewhite;
+}
+header.clearfix.header.region--dark-typography.region--white-background.full-width.two-columns {
+    background-color: whitesmoke;
+}
+.contextual-region.view.view-front-page-highlight.view-id-front_page_highlight.view-display-id-block_1{
+    background-color: floralwhite;
+}
+
+.path-frontpage .views-field.views-field-field-tags {
+    position: absolute;
+    /* bottom: 37px; */
+    padding: 10px;
+    left: 19px;
+    /* right: 256px; */
+    top: 18px;
+    font-size: 20px;
+    background-color: #e6561e36;
+    text-transform: capitalize;
+}
+.views-field.views-field-title {
+    font-size: 20px;
+}
+.path-frontpage h2.title, #block-minimal-lite-tools-menu {
+    font-size: 30px;
+}
+/*Footer*/
+div#subfooter {
+    background-color: whitesmoke;
+}
+.subfooter__section ul.menu {
+    text-align: center;
+}
+/* Our Ministry */
+img.pp-image {
+    width: 220px;
+}
+/*bread-crumb*/
+.contextual-region.clearfix.block.block-system.block-system-breadcrumb-block{
+    padding: 0px;
+}
+div#block-minimal-lite-breadcrumbs {
+    padding: 0px;
+}
+div#block-minimal-lite-page-title, h1.page-title {
+    margin-bottom: 0px;
+}
+
+nav.breadcrumb.mt-md-4 {
+    margin-top: 0px;
+}
+h2.title {
+    font-size: 44px;
+}
+/*accordion*/
+.ckeditor-accordion-container > dl dt > a:hover {
+    background-color: #ff3175;
+}
+.ckeditor-accordion-container > dl dt > a {
+    background-color: #343a40;
+    border-bottom: 1px solid whitesmoke;
+}
+.ckeditor-accordion-container > dl dt.active > a {
+    background-color: #bcbcbc;
+}
+.facebook.print-button-enabled, .twitter.print-button-enabled, .share-links{
+    display: none;
+}
+/*Staff News*/
+.page-node-186 .staff-news-panel {
+    flex-direction: column;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    position: relative;
+    overflow-anchor: none;
+    padding: 31px;
+    margin: 36px;
+    width: 90% !important;
+}
+.page-node-186 .views-field.views-field-field-image {
+    float: right;
+    width: 100px;
+    height: auto;
+}
+.page-node-186 .views-field.views-field-name {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    box-align: center;
+    align-items: center;
+    border-radius: 2rem;
+    border: 1px solid #ff3175;
+    width: auto;
+    max-width: 95%;
+    padding: 1px 7px;
+    margin: 4px;
+}
+.page-node-186 .views-field.views-field-name:hover {
+    background-color: #f3dfe6;
+    text-decoration: none;
+}
+.contextual-region.view.view-tags.view-id-tags.view-display-id-block_1 {
+    background-color: aliceblue;
+}
+/*Our Ministry*/
+div#block-keyministrycontacts {
+    background-color: #ffece5;
+}
+div#block-prioritiesandplans {
+    background-color: #d8e1f1;
+}
+/*HR*/
+div#block-hrresources {
+    background-color: #ffe7de;
+}
+.contextual-region.view.view-hr-news.view-id-hr_news.view-display-id-block_1 {
+    background-color: #e8e6c3;
+}
+/*Financial Services*/
+div#block-financialservicesnavigation {
+    background-color: antiquewhite;
+}
+/*Security Pages*/
+div#block-views-block-privacy-security-news-block-1 {
+    background-color: #fff7de;
+}
+/*Resources & Tools */
+.page-node-190 div#block-minimal-lite-content {
+    background-color: #ffeaf1;
+}
+
+/* Tags */
+.field--entity-reference-target-type-taxonomy-term .field__item a{
+    padding: 2px 8px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 12px;
+    margin-bottom: 6px;
+    border-color: #ff3175;
+    color: #ff3175;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item a:hover {
+    background-color: rgba(255, 49, 117, 0.8);
+    border-color: rgba(255, 49, 117, 0.8);
+    text-decoration: none;
+}
+.field--entity-reference-target-type-taxonomy-term .field__item a:hover {
+    color: #ffffff;
+}

@@ -51,8 +51,7 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
 }
 
 .contextual-region.view.view-front-page-highlight.view-id-front_page_highlight.view-display-id-block_1 {
-    padding-left: 10%;
-    padding-right: 10%;
+    background-color: floralwhite;
 }
 #block-mainnavigation-2{
     float:left;

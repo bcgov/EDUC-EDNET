@@ -1,3 +1,17 @@
+/*Overwrite*/
+h1{
+    font-size:37.32px !important;
+}
+h2{
+    font-size:31.10px !important;
+}
+h3{
+    font-size:25.92px !important;
+}
+h4{
+    font-size:21.60px !important;
+}
+
 /*Front Page */
 .path-frontpage .views-field.views-field-field-event-image,
 .path-frontpage .view-display-id-block_2 .views-field.views-field-field-image,

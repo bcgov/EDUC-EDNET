@@ -43,6 +43,11 @@ div#block-views-block-job-postings-block-1 {
     padding: 10px;
 }
 
+.header-first{
+    padding: 0 10%;
+
+}
+
 header.clearfix.header.region--dark-typography.region--white-background.full-width.two-columns {
     background-color: whitesmoke;
 }
@@ -124,6 +129,11 @@ img.pp-image {
 }
 
 /*bread-crumb*/
+.container-fluid .breadcrumb .breadcrumb__items{
+    margin-left: 15px;
+    margin-right: 0px;
+
+}
 .contextual-region.clearfix.block.block-system.block-system-breadcrumb-block {
     padding: 0px;
 }

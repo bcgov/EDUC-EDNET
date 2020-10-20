@@ -89,7 +89,7 @@ to-top:
 ednet-js:
   version: VERSION
   js:
-    js/ednet.js: {}
+    js/custom/ednet.js: {}
   dependencies:
     - core/jquery
 

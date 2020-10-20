@@ -327,7 +327,7 @@ function minimal_lite_preprocess_page(&$variables) {
 
 
   if ($variables['main_content_layout_container'] == "container-fluid pl-xl-5 pr-xl-5") {
-    $variables['main_content_paddings'] = "pr-xl-5 pl-xl-5";
+    $variables['main_content_paddings'] = "pr-xl-1 pl-xl-1";
     $variables['sidebar_paddings'] = "pr-xl-1 pl-xl-1";
   } else {
     $variables['main_content_paddings'] = "";

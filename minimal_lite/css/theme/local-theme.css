@@ -8,10 +8,13 @@
 .views-view-grid.horizontal.cols-3.clearfix {
     padding: 10px;
 }
-
-.path-frontpage .views-row {
+.path-frontpage .views-row{
     padding: 10px;
-    border: solid 1px #d3d3d336;
+}
+
+.path-frontpage .views-row + .views-row {
+   
+    border-top: solid 1px #ccc;
 }
 
 div#block-views-block-highlight {
@@ -20,7 +23,7 @@ div#block-views-block-highlight {
 }
 
 div#block-views-block-events-calendar-block-1 {
-    padding: 10px;
+    padding-top: 40px;
 }
 
 .path-frontpage nav#block-minimal-lite-tools {
@@ -32,10 +35,7 @@ div#block-views-block-events-calendar-block-1 {
 }
 
 div#block-views-block-events-calendar-block-4 {
-    background-color: #f2f2f2;
     padding: 10px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
 }
 
 div#block-views-block-job-postings-block-1 {
@@ -50,7 +50,34 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
 .contextual-region.view.view-front-page-highlight.view-id-front_page_highlight.view-display-id-block_1 {
     background-color: floralwhite;
 }
+#block-mainnavigation-2{
+    float:left;
+    padding: 0px !important;
+    margin-top: 10px;
+}
+.search-block-form{
+    float:left;
+    padding: 0px !important;
+    margin-top:20px;
+    
+}
+#block-tools{
+    padding: 0px !important;
+}
+#block-sitebranding{
+    padding-bottom: 0px !important;
+    float:left;
+} 
+.tools.navbar{
+    background: white;
+    position: absolute;
+    right: 0;
 
+}
+.tools.navbar .we-mega-menu-li{
+    border-radius: 25px;
+
+}
 .path-frontpage .views-field.views-field-field-tags {
     position: absolute;
     /* bottom: 37px; */
@@ -73,8 +100,15 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
 .path-frontpage h2.title,
 #block-minimal-lite-tools-menu {
     font-size: 30px;
+    border-bottom: 1px solid #666;
 }
 
+.gov-links{
+    position:absolute;
+    top: 0;
+    right: 0;
+    padding-bottom: 0px;
+}
 /*Footer*/
 div#subfooter {
     background-color: whitesmoke;
@@ -101,6 +135,7 @@ div#block-minimal-lite-breadcrumbs {
 div#block-minimal-lite-page-title,
 h1.page-title {
     margin-bottom: 0px;
+    font-size: 1.5em;
 }
 
 nav.breadcrumb.mt-md-4 {
@@ -262,6 +297,7 @@ li.we-mega-menu-li.dropdown-menu {
 .highlight-title {
     text-align: center;
     color: #444;
+    height: 50px;
 }
 
 .highlight-summary {

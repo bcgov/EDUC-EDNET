@@ -11,6 +11,7 @@ libraries:
   - minimal_lite/in-page-navigation
   - minimal_lite/fontawesome-css
   - minimal_lite/owl-carousel-testimonials-init
+  - minimal_lite/ednet-js
 libraries-override:
   classy/base:
     css:

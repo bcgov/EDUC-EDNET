@@ -1,5 +1,11 @@
 <?php
 
+function yourmodule_element_info_alter(array &$types) {
+  if (isset($types['table'])) {
+    $types['table']['#attached']['library'][] = 'js/custom/ednet.js';
+  }
+}
+
 function minimal_lite_form_system_theme_settings_alter(&$form, &$form_state) {
 
   $form['#attached']['library'][] = 'minimal_lite/theme-settings';

@@ -42,6 +42,20 @@ div#block-views-block-highlight {
 div#block-views-block-events-calendar-block-1 {
     padding-top: 40px;
 }
+.event-date{
+    padding-right: 20px;
+}
+.event-date .date-icon{
+    border: 1px solid #ccc;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    padding: 15px;
+    background: #18a099;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+}
 
 .path-frontpage nav#block-minimal-lite-tools {
     margin-top: 35px;
@@ -82,6 +96,7 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
     float:left;
     padding: 0px !important;
     margin-top:20px;
+    display: none;
     
 }
 #block-tools{
@@ -360,5 +375,9 @@ li.we-mega-menu-li.dropdown-menu {
 
 .view-front-page-highlight .view-footer {
     background: #fff;
-
+    margin-top: -30px;
 }
+.path-frontpage .main-content__section{
+    padding: 0px;
+}
+

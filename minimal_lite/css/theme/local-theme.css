@@ -21,6 +21,9 @@ h4{
 div#block-views-block-front-page-highlight-block-1 {
   padding-bottom: 0px;
 }
+div#block-morehighlights {
+    padding: 0px;
+}
 .more-highlights {
   text-align: center;
   background: rgba(0,0,0,.8);

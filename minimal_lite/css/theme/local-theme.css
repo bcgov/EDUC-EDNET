@@ -21,6 +21,7 @@ h4{
 div#block-views-block-front-page-highlight-block-1 {
   padding-bottom: 0px;
 }
+
 div#block-morehighlights {
     padding: 0px;
 }
@@ -84,7 +85,7 @@ div#block-views-block-events-calendar-block-1 {
 }
 
 div#block-views-block-events-calendar-block-4 {
-    padding: 10px;
+    padding: 0px;
 }
 
 div#block-views-block-job-postings-block-1 {
@@ -296,11 +297,6 @@ div#block-views-block-privacy-security-news-block-1 {
     background-color: #fff7de;
 }
 
-/*Resources & Tools */
-.page-node-190 div#block-minimal-lite-content {
-    background-color: #ffeaf1;
-}
-
 /* Tags */
 .field--entity-reference-target-type-taxonomy-term .field__item a {
     padding: 2px 8px;
@@ -308,13 +304,13 @@ div#block-views-block-privacy-security-news-block-1 {
     border-style: solid;
     font-size: 12px;
     margin-bottom: 6px;
-    border-color: #ff3175;
-    color: #ff3175;
+    border-color: #e6561e;
+    color: #e6561e;
 }
 
 .field--entity-reference-target-type-taxonomy-term .field__item a:hover {
-    background-color: rgba(255, 49, 117, 0.8);
-    border-color: rgba(255, 49, 117, 0.8);
+    background-color: #e6561e;
+    border-color:#e6561e;
     text-decoration: none;
 }
 
@@ -388,12 +384,11 @@ li.we-mega-menu-li.dropdown-menu {
     border-bottom: 1px solid #666;
     font-size: 1.2em;
     width: 100%;
-
 }
 
 .view-front-page-highlight .view-footer {
     background: #fff;
-
+}
 .site-notification {
   border: 1px solid #ccc;
   border-radius: 20px;

@@ -18,9 +18,24 @@ h4{
 .path-frontpage .view-display-id-block_4 .views-field.views-field-field-image {
     float: right;
 }
-.path-frontpage #main-content{
-    padding-left: 10%;
-    padding-right: 10%;
+div#block-views-block-front-page-highlight-block-1 {
+  padding-bottom: 0px;
+}
+div#block-morehighlights {
+    padding: 0px;
+}
+.more-highlights {
+  text-align: center;
+  background: rgba(0,0,0,.8);
+  color: white;
+  font-size: 20px;
+}
+.more-highlights a {
+  color: white;
+}
+.path-frontpage #main-content {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .views-view-grid.horizontal.cols-3.clearfix {
     padding: 10px;
@@ -35,26 +50,29 @@ h4{
 }
 
 div#block-views-block-highlight {
-    background-color: #fbe5e2;
-    padding: 10px;
+  background-color: #fbe5e2;
+  padding: 10px;
+  border-radius: .5rem;
 }
 
 div#block-views-block-events-calendar-block-1 {
-    padding-top: 40px;
+  float: left;
 }
-.event-date{
-    padding-right: 20px;
+.event-date {
+  padding-right: 20px;
 }
-.event-date .date-icon{
-    border: 1px solid #ccc;
-    height: 70px;
-    width: 70px;
+.event-date .date-icon {
+   border: 1px solid #ccc;
+    height: 50px;
+    width: 50px;
     text-align: center;
-    padding: 15px;
+    padding: 2px;
     background: #18a099;
     border-radius: 5px;
     color: white;
-    font-weight: 700;
+}
+.event-details p {
+  padding: 0px;
 }
 
 .path-frontpage nav#block-minimal-lite-tools {
@@ -70,8 +88,9 @@ div#block-views-block-events-calendar-block-4 {
 }
 
 div#block-views-block-job-postings-block-1 {
-    background-color: antiquewhite;
-    padding: 10px;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: .5rem;
 }
 
 .header-first{
@@ -79,8 +98,8 @@ div#block-views-block-job-postings-block-1 {
 
 }
 
-header.clearfix.header.region--dark-typography.region--white-background.full-width.two-columns {
-    background-color: whitesmoke;
+header.clearfix.header.region--dark-typography.region--white-background.full-width.one-column {
+    background: #e4e4e4;
 }
 
 .contextual-region.view.view-front-page-highlight.view-id-front_page_highlight.view-display-id-block_1 {
@@ -96,8 +115,11 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
     float:left;
     padding: 0px !important;
     margin-top:20px;
+<<<<<<< HEAD
     display: none;
     width: 100%;
+=======
+>>>>>>> 424bb4990d42568c4f8a7e77755769126436e99c
     
 }
 #block-tools{
@@ -150,7 +172,7 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
 }
 /*Footer*/
 div#subfooter {
-    background-color: whitesmoke;
+  background: #e4e4e4;
 }
 
 .subfooter__section ul.menu {
@@ -178,8 +200,8 @@ div#block-minimal-lite-breadcrumbs {
 
 div#block-minimal-lite-page-title,
 h1.page-title {
-    margin-bottom: 0px;
-    font-size: 1.5em;
+  margin-bottom: 0px;
+  font-size: 1.5em;
 }
 
 nav.breadcrumb.mt-md-4 {
@@ -191,8 +213,8 @@ h2.title {
 }
 
 /*accordion*/
-.ckeditor-accordion-container>dl dt>a:hover {
-    background-color: #ff3175;
+.ckeditor-accordion-container > dl dt > a:hover {
+  background-color: #e6561e;
 }
 
 .ckeditor-accordion-container>dl dt>a {
@@ -211,44 +233,44 @@ h2.title {
 }
 
 /*Staff News*/
-.page-node-186 .staff-news-panel {
-    flex-direction: column;
-    border: 1px solid #dadce0;
-    border-radius: 8px;
-    position: relative;
-    overflow-anchor: none;
-    padding: 31px;
-    margin: 36px;
-    width: 90% !important;
+.staff-news-panel {
+  flex-direction: column;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  position: relative;
+  overflow-anchor: none;
+  padding: 31px;
+  margin: 36px;
+  width: 90% !important;
 }
 
-.page-node-186 .views-field.views-field-field-image {
-    float: right;
-    width: 100px;
-    height: auto;
+.page-node-186 .views-field.views-field-field-image, .page-node-1692 .views-field.views-field-field-image {
+  float: right;
+  width: 100px;
+  height: auto;
 }
 
-.page-node-186 .views-field.views-field-name {
-    display: -webkit-inline-box;
-    display: inline-flex;
-    -webkit-box-align: center;
-    box-align: center;
-    align-items: center;
-    border-radius: 2rem;
-    border: 1px solid #ff3175;
-    width: auto;
-    max-width: 95%;
-    padding: 1px 7px;
-    margin: 4px;
+.page-node-186 .views-field.views-field-name,  .page-node-1692 .views-field.views-field-name{
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: center;
+  box-align: center;
+  align-items: center;
+  border-radius: 2rem;
+  border: 1px solid #E6561E;
+  width: auto;
+  max-width: 95%;
+  padding: 1px 7px;
+  margin: 4px;
 }
 
-.page-node-186 .views-field.views-field-name:hover {
-    background-color: #f3dfe6;
-    text-decoration: none;
+.page-node-186 .views-field.views-field-name:hover, .page-node-1692 .views-field.views-field-name:hover {
+  background-color: #f3dfe6;
+  text-decoration: none;
 }
 
 .contextual-region.view.view-tags.view-id-tags.view-display-id-block_1 {
-    background-color: aliceblue;
+  background-color: #ffeee7;;
 }
 
 /*Our Ministry*/
@@ -376,9 +398,47 @@ li.we-mega-menu-li.dropdown-menu {
 
 .view-front-page-highlight .view-footer {
     background: #fff;
-    margin-top: -30px;
-}
-.path-frontpage .main-content__section{
-    padding: 0px;
+
+.site-notification {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 25px;
+  height: 150p;
+  width: 200px;
+  position: fixed;
+  bottom: 20px;
+  right: 10%;
+  background: #e2e2e2;
+  opacity: 0.8;
+  color: Green;
+  text-align: center;
+
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  z-index: 100;
 }
 
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

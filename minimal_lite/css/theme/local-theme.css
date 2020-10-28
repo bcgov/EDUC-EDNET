@@ -111,7 +111,7 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
     padding: 0px !important;
     margin-top: 10px;
 }
-#search-block-form{
+.search-block-form{
     float:left;
     padding: 0px !important;
     margin-top:20px;

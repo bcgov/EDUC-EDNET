@@ -172,7 +172,9 @@ p.event-title {
 }
 .tools.navbar .we-mega-menu-li{
     border-radius: 25px;
-
+}
+li.we-mega-menu-li.col-header {
+    width: 100%;
 }
 .path-frontpage .views-field.views-field-field-tags {
     position: absolute;
@@ -330,6 +332,15 @@ div#block-financialservicesnavigation {
 
 
 /* Tags */
+.page-node-186 .views-field.views-field-name {
+    float: left;
+}
+div#block-views-block-tags-block-1 {
+    margin-top: 206px;
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 1rem;
+}
 .field--entity-reference-target-type-taxonomy-term .field__item a {
     padding: 2px 8px;
     border-width: 1px;
@@ -415,7 +426,11 @@ li.we-mega-menu-li.dropdown-menu {
     padding-left: 10rem;
     padding-right: 33rem;
 }
-
+/*Job Posting */
+.page-node-type-job-posting div#main-content {
+    padding-left: 10rem;
+    padding-right: 33rem;
+}
 /* Megamenu styles */
 .main.navbar {
     background: none;

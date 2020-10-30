@@ -18,10 +18,15 @@ h4{
 .path-frontpage .view-display-id-block_4 .views-field.views-field-field-image {
     float: right;
 }
+.path-frontpage .main-content__section, .sidebar__section {
+    padding: 0px;
+}
 div#block-views-block-front-page-highlight-block-1 {
   padding-bottom: 0px;
 }
-
+.path-frontpage div#block-minimal-lite-content {
+    display: none;
+}
 div#block-morehighlights {
     padding: 0px;
 }
@@ -41,8 +46,13 @@ div#block-morehighlights {
 .views-view-grid.horizontal.cols-3.clearfix {
     padding: 10px;
 }
+.path-frontpage .views-view-grid .views-row {
+    float: left;
+    clear: both;
+    width: 102%;
+}
 .path-frontpage .views-row{
-    padding: 10px;
+    padding: 10px 10px 10px 14px;
 }
 
 .path-frontpage .views-row + .views-row {
@@ -103,7 +113,7 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
     background: #e4e4e4;
 }
 
-.contextual-region.view.view-front-page-highlight.view-id-front_page_highlight.view-display-id-block_1 {
+.path-frontpage .content-top-highlighted__section {
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -116,12 +126,9 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
     float:left;
     padding: 0px !important;
     margin-top:20px;
-<<<<<<< HEAD
-    display: none;
-    width: 100%;
-=======
->>>>>>> 424bb4990d42568c4f8a7e77755769126436e99c
-    
+}
+p.event-title {
+    font-size: 20px;
 }
 #block-tools{
     padding: 0px !important;
@@ -288,19 +295,12 @@ div#block-hrresources {
     background-color: #ffe7de;
 }
 
-.contextual-region.view.view-hr-news.view-id-hr_news.view-display-id-block_1 {
-    background-color: #e8e6c3;
-}
 
 /*Financial Services*/
 div#block-financialservicesnavigation {
     background-color: antiquewhite;
 }
 
-/*Security Pages*/
-div#block-views-block-privacy-security-news-block-1 {
-    background-color: #fff7de;
-}
 
 /* Tags */
 .field--entity-reference-target-type-taxonomy-term .field__item a {
@@ -373,13 +373,24 @@ li.we-mega-menu-li.dropdown-menu {
 .read-more-highlights {
     float: right;
 }
-
+/*Highlight*/
+.path-node.page-node-type-highlight section.col-12.pr-xl-1.pl-xl-1 {
+    padding-left: 10rem!important;
+    padding-right: 33rem!important;
+}
+/*Events */
+.page-node-type-event div#main-content {
+    padding-left: 10rem;
+    padding-right: 33rem;
+}
 
 /* Megamenu styles */
 .main.navbar {
     background: none;
 }
-
+.col-header{
+    background-color: #e2e2e2 !important;
+}
 .main.navbar .we-mega-menu-li {
     background: none;
 }

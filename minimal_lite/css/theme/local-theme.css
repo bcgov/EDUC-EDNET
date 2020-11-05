@@ -172,7 +172,7 @@ p.event-title {
     background: white;
     position: absolute;
     right: 0;
-
+}
 #block-sitebranding {
   padding-bottom: 0px !important;
   float: left;
@@ -431,7 +431,11 @@ li.we-mega-menu-li.dropdown-menu {
 .read-more-highlights {
   float: right;
 }
-
+/*search*/
+.path-search .region.region-content {
+  padding-left: 10%;
+  padding-right: 10%;
+}
 /*Highlight*/
 .path-node.page-node-type-highlight section.col-12.pr-xl-1.pl-xl-1 {
   padding-left: 10rem !important;
@@ -447,7 +451,11 @@ li.we-mega-menu-li.dropdown-menu {
   padding-left: 10rem;
   padding-right: 33rem;
 }
-
+/*Templates page */
+.page-node-190 .clearfix.main-content__container {
+  padding-left: 10%;
+  padding-right: 10%;
+}
 /* Megamenu styles */
 .main.navbar {
   background: none;
@@ -455,6 +463,7 @@ li.we-mega-menu-li.dropdown-menu {
 
 .col-header {
   background-color: #e2e2e2 !important;
+  width:100%
 }
 
 .main.navbar .we-mega-menu-li {

@@ -143,7 +143,10 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
   padding-left: 10%;
   padding-right: 10%;
 }
-
+.page-node-type-job-posting div#main-content {
+  padding-left: 10%;
+  padding-right: 10%;
+}
 #block-mainnavigation-2 {
   float: left;
   padding: 0px !important;
@@ -305,7 +308,8 @@ h2.title {
 }
 
 .page-node-186 .views-field.views-field-name,
-.page-node-1692 .views-field.views-field-name {
+.page-node-1692 .views-field.views-field-name,
+.path-taxonomy .views-field.views-field-name {
   display: -webkit-inline-box;
   display: inline-flex;
   -webkit-box-align: center;
@@ -320,7 +324,8 @@ h2.title {
 }
 
 .page-node-186 .views-field.views-field-name:hover,
-.page-node-1692 .views-field.views-field-name:hover {
+.page-node-1692 .views-field.views-field-name:hover,
+.path-taxonomy .views-field.views-field-name:hover {
   background-color: #f3dfe6;
   text-decoration: none;
 }
@@ -354,6 +359,9 @@ div#block-financialservicesnavigation {
 /* Tags */
 .page-node-186 .views-field.views-field-name {
     float: left;
+}
+.path-taxonomy .views-field.views-field-name {
+  float: left !important;
 }
 div#block-views-block-tags-block-1 {
     margin-top: 206px;
@@ -417,15 +425,17 @@ li.we-mega-menu-li.dropdown-menu {
 .highlight-title {
   text-align: center;
   color: #444;
-  height: 50px;
+  height: 80px;
 }
 
 .highlight-summary {
   padding: 20px;
   text-align: center;
-  background: #fafafa;
+  background: #2b2b2b;
   border-top: 1px solid #ccc;
-  min-height: 150px
+  min-height: 150px;
+  color: white;
+  opacity: 80%;
 }
 
 .read-more-highlights {

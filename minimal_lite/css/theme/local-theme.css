@@ -446,25 +446,85 @@ li.we-mega-menu-li.dropdown-menu {
   padding-left: 10%;
   padding-right: 10%;
 }
+@media only screen and (max-width: 1200px) {
+  .path-search .region.region-content {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .path-search .region.region-content {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
 /*Highlight*/
 .path-node.page-node-type-highlight section.col-12.pr-xl-1.pl-xl-1 {
   padding-left: 10rem !important;
   padding-right: 33rem !important;
+}
+@media only screen and (max-width: 1200px) {
+  .path-node.page-node-type-highlight section.col-12.pr-xl-1.pl-xl-1 {
+    padding-left: 5rem !important;
+    padding-right: 15rem !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .path-node.page-node-type-highlight section.col-12.pr-xl-1.pl-xl-1 {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
 }
 /*News*/
 .page-node-186 div#main-content {
     padding-left: 10rem;
     /* padding-right: 33rem; */
 }
+@media only screen and (max-width: 1200px) {
+  .page-node-186 div#main-content {
+    padding-left: 5rem;
+    /* padding-right: 33rem; */
+  }
+}
+@media only screen and (max-width: 600px) {
+  .page-node-186 div#main-content {
+    padding-left: 0rem;
+    /* padding-right: 33rem; */
+  }
+}
 /*Events */
 .page-node-type-event div#main-content {
   padding-left: 10rem;
   padding-right: 33rem;
 }
+@media only screen and (max-width: 1200px) {
+  .page-node-type-event div#main-content {
+    padding-left: 5rem;
+    padding-right: 15rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .page-node-type-event div#main-content {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
 /*Templates page */
 .page-node-190 .clearfix.main-content__container {
   padding-left: 10%;
   padding-right: 10%;
+}
+@media only screen and (max-width: 1200px) {
+  .page-node-190 .clearfix.main-content__container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .page-node-190 .clearfix.main-content__container {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
 }
 /* Megamenu styles */
 .main.navbar {

@@ -406,7 +406,10 @@ li.we-mega-menu-li.dropdown-menu.menu-item {
 li.we-mega-menu-li.dropdown-menu {
   opacity: 1;
 }
-
+/** logo **/
+.logo img {
+  max-width: 116%;
+}
 /** Front page highlights**/
 .front-page-highlight {
   margin: 0 5px;

@@ -220,9 +220,10 @@ h1 {
   .path-frontpage .views-field.views-field-field-tags:hover {
     background-color: #e6561e;
     border: 2px solid #e6561e;
+    color: #fff;
     opacity: .8;
   }
-  .path-frontpage .views-field.views-field-field-tags a:hover { 
+  .path-frontpage .views-field.views-field-field-tags .field-content a:hover { 
     color: #fff;
   }
   .path-frontpage h2.title,

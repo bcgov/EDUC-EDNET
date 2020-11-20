@@ -14,7 +14,9 @@ h1 {
   h4 {
     font-size: 15.60px !important;
   }
-  
+  .main-content__section, .sidebar__section {
+    padding-top: 0px !important;
+  }
   /*Front Page */
   .feed-back-block {
       background-color: #e6561e;
@@ -215,9 +217,14 @@ h1 {
     border: 2px solid #666;
     opacity: .8;
   }
-  
-  
-  
+  .path-frontpage .views-field.views-field-field-tags:hover {
+    background-color: #e6561e;
+    border: 2px solid #e6561e;
+    opacity: .8;
+  }
+  .path-frontpage .views-field.views-field-field-tags a:hover { 
+    color: #fff;
+  }
   .path-frontpage h2.title,
   #block-minimal-lite-tools-menu {
     border-bottom: 1px solid #666;

@@ -223,7 +223,8 @@ h1 {
     color: #fff;
     opacity: .8;
   }
-  .path-frontpage .views-field.views-field-field-tags .field-content a:hover { 
+  .path-frontpage .views-field.views-field-field-tags:hover,
+  .path-frontpage .views-field.views-field-field-tags:hover a{ 
     color: #fff;
   }
   .path-frontpage h2.title,

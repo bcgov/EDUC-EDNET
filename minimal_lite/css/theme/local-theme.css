@@ -410,6 +410,27 @@ h1 {
   .logo img {
     max-width: 116%;
   }
+  /** Feedback **/
+  div#block-feedbackblock {
+    position: fixed;
+    transform: rotate(90deg);
+    top: 55%;
+    right: -6px;
+    z-index: 9999999999999;
+  }
+  
+  div#block-feedbackblock a {
+    background-color: #e2e2e2;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 2px;
+    float: left;
+    text-transform: none !important;
+  }
+  div#block-feedbackblock a:hover {
+    background-color: #e6561e;
+    color: white
+  }
   /** Front page highlights**/
   .front-page-highlight {
     margin: 0 5px;

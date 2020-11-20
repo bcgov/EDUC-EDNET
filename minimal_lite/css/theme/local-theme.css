@@ -391,7 +391,10 @@ div#block-views-block-tags-block-1 {
 .field--entity-reference-target-type-taxonomy-term .field__item a:hover {
   color: #ffffff;
 }
-
+/** mega munu **/
+.we-mega-menu-ul>.we-mega-menu-li>a{
+  background-color: #ffffff;
+}
 .dropdown-menu {
   opacity: 1 !important
 }

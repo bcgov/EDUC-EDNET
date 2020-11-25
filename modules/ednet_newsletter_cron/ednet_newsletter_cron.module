@@ -7,7 +7,7 @@ use \Drupal\node\Entity\Node;
 function ednet_newsletter_cron_cron() {
     $dispalyDateToday = date('l, M d, Y');
     $highlightQuery = "SELECT nid, title, field_highlight_summary_value, DATE(FROM_UNIXTIME(created)) as created FROM node__field_highlight_summary,node_field_data WHERE node__field_highlight_summary.entity_id = node_field_data.nid AND node_field_data.promote = 1";
-    $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%y %M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) BETWEEN DATE_SUB( NOW( ) ,INTERVAL 1 DAY ) AND CURDATE( ) AND type = 'article'";
+    $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%y %M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) BETWEEN DATE_SUB( NOW( ) , INTERVAL 2 DAY ) AND CURDATE( ) AND type = 'article'";
     $eventsQuery = "SELECT nid, title, node_revision__field_event_start_date.field_event_start_date_value as event_start_date FROM node_field_data, node_revision__field_event_start_date WHERE node_revision__field_event_start_date.entity_id = node_field_data.nid AND field_event_start_date_value >= (DATE(NOW()) - INTERVAL 7 DAY)";
     $database = \Drupal::database();
     $query2 = $database->query($highlightQuery);
@@ -22,28 +22,47 @@ function ednet_newsletter_cron_cron() {
     //Loop for getting the Highlights 
     foreach ($highlightsResults as $highlightsResult) {
         $i++;
-        $highlightsOutput .= "<tr style='padding-bottom: 40px; border-style:none;'>
-        <td colspan='2'style='font-family: arial;padding: 0 50px 0 25px;font-size: 11pt;vertical-align: top; border-style:none;'>
-        <span style='font-family: arial !important; font-size: 22px !important; font-weight: bold;'>$i</span><br />
-        <span
-            style='
-              font-family: arial !important;
-              color: #333;
-              font-size: 22px;
-              font-weight: bold;
-              text-decoration: none;
-            '
-            > <a href='http://dori.bcedintra.gov.bc.ca/$highlightsResult->nid'>$highlightsResult->title</a> </span>
-          <br /> $highlightsResult->field_highlight_summary_value <br /><br />
+        $highlightsOutput .= "<tr style='padding-bottom: 30px; border-style:none;'>
+        <td style='font-family: arial; width:10%; color: white; font-size: 11pt;vertical-align: top; border-style:none;'>
+        <span style='font-family: arial !important; font-size: 22px !important; font-weight: bold;'></span><br />
         </td>
+        <td style='width:80%'>
+            <table>
+                <tr>
+                    <td style='width: 50px; vertical-align:top; padding-top: 10px'><div style='font-size: 20px; border:1px solid #666; color:white; background: #ff680d; height: 40px; width:40px; text-align:center'>$i</div></td>
+                    <td style='padding-left:15px;'>
+                        <span
+                            style='
+                            font-family: arial !important;
+                            color: #333;
+                            font-size: 22px;
+                            font-weight: bold;
+                            text-decoration: none;
+                            '
+                            ><a href='http://gww.bcedintra.gov.bc.ca/node/$highlightsResult->nid'>$highlightsResult->title</a></span>
+                        <br />  <span
+                        style='
+                            font-family: arial !important;
+                            color: #333;
+                            font-size: 18px;
+                            text-decoration: none;
+                        
+                        '
+                        >$highlightsResult->field_highlight_summary_value </span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style='width: 10%'></td>
       </tr>";
     }
     //Loop for getting the Staff Posts 
+
     foreach ($staffPostsResults as $staffPostsResult) {
         $j++;
         $staffPostsOutput .= "<tr style='padding-bottom: 40px; border-style:none;'>
-        <td colspan='2'style='background-color:#f5f5f5;font-family: arial;padding: 0 50px 0 25px;font-size: 11pt;vertical-align: top; border-style:none;'>
-        
+        <td style='width: 10%'></td>
+        <td colspan='2' style='width: 80%; font-family: arial;font-size: 11pt;vertical-align: top; border-bottom: 1px solid #ccc;'>
         <span
             style='
                 font-family: arial !important;
@@ -51,25 +70,36 @@ function ednet_newsletter_cron_cron() {
                 font-size: 22px;
                 font-weight: bold;
                 text-decoration: none;
+                margin-top: 15px;
             '
-            >$j. <a href='http://dori.bcedintra.gov.bc.ca/node/$staffPostsResult->nid'>$staffPostsResult->title</a> </span><br />
+            ><a href='http://gww.bcedintra.gov.bc.ca/node/$staffPostsResult->nid'>$staffPostsResult->title</a></span>
         <span
         style='
             font-family: arial !important;
             color: #333;
             font-size: 16px;
             text-decoration: none;
-            padding-left: 26px;
-        '> $staffPostsResult->created </span>    
-            <br /> $staffPostsResult->field_highlight_summary_value <br /><br />
+        '> $staffPostsResult->created </span>
+        <br>    
+            <span
+            style='
+                font-family: arial !important;
+                color: #333;
+                font-size: 16px;
+                text-decoration: none;
+                margin-bottom: 10px;
+            '>$staffPostsResult->field_highlight_summary_value</span> 
         </td>
+        <td style='width: 10%'></td>
         </tr>";
+    }
+    if($j == 0){
+        $staffPostsResults = "<tr><td colspan='3' style='text-align:center'>There are currently no new Staff Announcements. <a href='https://gww.bcedintra.gov.bc.ca/'>Add a staff announcement</a>.</td></tr>";
     }
     //Loop for getting the Events 
     foreach ($eventsResults as $eventsResult) {
         $k++;
-        $eventsOutput .= "<tr style='padding-bottom: 40px; border-style:none;'>
-        <td colspan='2'style='font-family: arial;padding: 0 50px 10px 25px;font-size: 11pt;vertical-align: top; border-style:none;'>
+        $eventsOutput .= "<tr><td style='padding-bottom: 15px; padding-top: 15px; border-bottom: 1px solid #ccc; width:100%;'>
         
         <span
             style='
@@ -79,95 +109,97 @@ function ednet_newsletter_cron_cron() {
                 font-weight: bold;
                 text-decoration: none;
             '
-            >$k) <a href='http://ednet-test-mod2.dd:8083/node/$eventsResult->nid'>$eventsResult->title</a> </span><br />
+            ><a href='http://gww.bcedintra.gov.bc.ca/node/$eventsResult->nid'>$eventsResult->title</a> </span><br />
         <span
         style='
             font-family: arial !important;
             color: #333;
             font-size: 16px;
             text-decoration: none;
-            padding-left: 26px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
         '> $eventsResult->event_start_date </span>    
-        </td>
-        </tr>";
+        </td></tr>";
     }
     $node = Node::create([
         'type'        => 'simplenews_issue',
-        'title'       => 'Ednet Issue '. $dispalyDateToday,
-        'body'        => ['value' => '<table bgcolor="#FFF" style="border-collapse: collapse; border-style: none; margin: 0px; border:none; border-spacing: 0; font-family:arial;">
-        <!-- HEADER -->
-        <tr style="margin: 0 auto;border-style: none;">
-            <td style="border-style: none;background-color: #ff680d;font-family:arial;font-size:12pt;color:white; padding: 0px 50px 0px 50px">
-                <table>
-                    <tr style="background-color: #ff680d; border-style: none;">
-                      <td style="vertical-align:center; padding:10px 0; width:560px; text-align:left; vertical-align:center; font-family:arial; color:white"><strong>MINISTRY NEWS</strong></td>
-                      <td style="border-style: none;width:260px; font-family:arial; color:white; text-align:right; background-color: #ff680d;">' .  $dispalyDateToday .'</td> 	
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <!-- <table bgcolor="#FFF" style=" border-collapse: collapse; border-style: none;border:none; border-spacing: 0; font-family:arial; margin: 0px;">
-        <tr style="margin: 0 auto; background-color: #FFF;">
-            <td style="padding:0px"> -->
-                <table style="width: 100%;">
-                    <tr>
-                        <td style="width: 50px;"></td>
-                        <td style="padding: 15px 0;  color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:center; border-bottom: 1px solid #ccc;">Headlines</td>
-                        <td style="width: 50px"></td>
-                    </tr>
-                </table>'
-                . $highlightsOutput .
-                '
-                <table style="width:100%; background:#e9e9e9;">
-                    <tr>
-                        <td style="width: 50px"></td>
-                        <td style="padding: 15px 0;  color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:center; border-bottom: 1px solid #ccc;">Staff Announcements</td>
-                        <td style="width: 50px"></td>
-                    </tr>
-                </table>
-                '.  $staffPostsOutput . '
-                <table style="width:100%;">
-                    <tr>
-                        <td style="width: 50px"></td>
-                        <td style=" color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:center; border-bottom: 1px solid #ccc; padding:20px">Upcoming Ministry Events</td>									
-                        <td style="width: 50px"></td>
-                    </tr>
-                </table>
-                <table style="padding: 0 50px; width:100%;">
-                    <tr style="border-style: none;">
-                        <td style="width: 100%;">
-                            <table style="width:100%; border-style: none;" >
-                                <tr>
-                                    <td style="font-family: arial; font-size:11pt; width:200px; text-align:center;"><p>Upcoming in the next 7 days</p></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-family: arial; font-size:11pt; width:100%">' . $eventsOutput . '</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-                <!-- Footer -->
-                <table style="width: 100%;">
-                    <tr style="height:200px;">
-                        <td align="center" style="font-family:arial; font-size:10pt; background-color: #3e454c; color: #FFF; height: 250px; padding: 50px 50px;" valign="top">
-                            <table>
-                                <tr>
-                                    <td style="color:white">
-                                        <p style="font-family: arial;">EdNet Update is delivered fresh at 9am daily.</p>
-                                        <p style="font-family: arial;">This is an automated message. Please do NOT reply to the sender email.</p>
-                                        <p style="font-family: arial">If you are receiving this email and are not an employee of the Ministry of Education</p> 
-                                        <p style="font-family: arial">please send an email to <a href="mailto:educwebs@victoria1.gov.bc.ca" style="color:#ff680d">Web Services</a>.</p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            <!-- </td>
-        </tr>
-    </table> -->', 'format' => 'full_html'],
+        'title'       => 'Ednet Newsletter '. $dispalyDateToday,
+        'body'        => ['value' => '
+        <table style="width: 100%;">
+            <tr>
+                <td style="width:15%"> </td>
+                <td style="width: 70%; background: #efefef;"> 
+                    <!-- HEADER -->
+
+                        <table  style="background-color: #ff680d; border-collapse: collapse; border-style: none; margin: 0px; border:none; border-spacing: 0; font-family:arial; width:100%;">
+                            <tr style="margin: 0 auto;border-style: none;"> 
+                                <td style="width: 10%;"></td>
+                                <td style="border-style: none;background-color: #ff680d;font-family:arial;font-size:12pt;color:white; width:80%;">
+                                    <table>
+                                        <tr style="border-style: none;">
+                                            <td style="vertical-align:center; width:560px; text-align:left; font-family:arial; color:white"><h1>EdNet Newsletter</h1></td>
+                                            <td style="border-style: none;width:260px; font-family:arial; color:white; text-align:right; background-color: #ff680d;">' .  $dispalyDateToday .'</td> 	
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width: 10%;"></td>
+                            </tr>
+                        </tbody></table>
+
+
+                    <!-- TOP STORIES -->
+
+                        <table style="width:100%; background:#e9e9e9; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+                            <tr>
+                                <td style="width: 10%;"></td>
+                                <td style="width: 80%; padding: 15px 0;  color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:left; ">Top Stories</td>
+                                <td style="width: 10%"></td>
+                            </tr>
+                        </table>
+                        <table style="width:100%;">' . $highlightsOutput . '</table>
+
+                    <!-- STAFF ANNOUNCEMENTS -->
+                        <table style="width:100%; background:#e9e9e9; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+                            <tr>
+                                <td style="width: 10%"></td>
+                                <td style="width: 80%; padding: 15px 0;  color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:left; ">Staff Announcements</td>
+                                <td style="width: 10%"></td>
+                            </tr>
+                        </table>
+                        <table style="width:100%;">'.  $staffPostsOutput . '</table>
+
+                    <!-- UPCOMING MINISTRY EVENTS -->
+                        <table style="width:100%; background:#e9e9e9; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
+                            <tr>
+                                <td style="width: 10%"></td>
+                                <td style="width: 80%; padding: 15px 0; color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:left; ">Upcoming Ministry Events</td>									
+                                <td style="width: 10%"></td>
+                            </tr>
+                        </table>
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="width: 10%"></td>
+                                <td style="width:80%; font-family: arial; font-size:11pt;"><p>Upcoming in the next 7 days</p><table style="width:100%">' . $eventsOutput . '</table></td>
+                                <td style="width: 10%"></td>
+                            </tr>      
+                    </table>
+
+                    <!-- FOOTER -->
+                    <table style="width: 100%;">
+                        <tr style="vertical-align"middle>
+                            <td align="center" style="font-family:arial; font-size:10pt; background-color: #3e454c; color: #FFF; height: 200;>
+                                <p style="font-family: arial;">EdNet Update is delivered fresh at 9am daily.</p>
+                                <p style="font-family: arial;">This is an automated message. Please do NOT reply to the sender email.</p>
+                                <p style="font-family: arial">If you are receiving this email and are not an employee of the Ministry of Education</p> 
+                                <p style="font-family: arial">please send an email to <a href="mailto:educwebs@victoria1.gov.bc.ca" style="color:#ff680d">Web Services</a>.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- END FOOTER -->
+                </td>
+                <td style="width:15%"> </td>
+            </tr>
+        </table>', 'format' => 'full_html'],
     ]);
 
     $node->save();

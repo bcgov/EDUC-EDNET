@@ -263,7 +263,12 @@ img.pp-image {
   margin-right: 0px;
 
 }
+/*taxonomy*/
 
+.path-taxonomy .clearfix.main-content__container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
 .contextual-region.clearfix.block.block-system.block-system-breadcrumb-block {
   padding: 0px;
 }

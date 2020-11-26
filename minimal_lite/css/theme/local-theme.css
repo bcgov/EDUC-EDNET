@@ -504,6 +504,7 @@ div#block-feedbackblock a:hover {
 /* Megamenu styles */
 .main.navbar {
   background: none;
+  padding:0px;
 }
 
 .col-header {
@@ -588,6 +589,7 @@ div#block-feedbackblock a:hover {
   list-style: none;
   height:20px;
   float:right;
+  padding: 0px !important;
   
 }
 .site-links ul li{
@@ -599,13 +601,19 @@ div#block-feedbackblock a:hover {
 .header-container{
   margin: 0px 10% !important;
 }
-@media only screen and (max-width: 760px) {
-  .header-container{
-    margin-left: 20px !important;
-    margin-right: 20px !important;
+@media only screen and (max-width: 1170px) {
+  
+  .header-container, .content-top-highlighted__section, #main-content{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: 0px !important;
   }
 }
-
+@media only screen and (max-width: 991px) {
+  .contextual{
+    display:none;
+  }
+}
 @keyframes shake {
 
   10%,
@@ -628,4 +636,7 @@ div#block-feedbackblock a:hover {
   60% {
     transform: translate3d(4px, 0, 0);
   }
-}
+  
+  .headroom--not-top .site-notification {
+    display:none;
+  }

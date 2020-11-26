@@ -505,7 +505,6 @@ div#block-feedbackblock a:hover {
 .main.navbar {
   background: none;
   padding:0px;
-  margin-bottom:-40px;
 }
 
 .col-header {
@@ -545,6 +544,9 @@ div#block-feedbackblock a:hover {
   backface-visibility: hidden;
   perspective: 1000px;
   z-index: 100;
+}
+.top-stories{
+
 }
 .top-stories h2:before{
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f1ea";
@@ -591,7 +593,6 @@ div#block-feedbackblock a:hover {
   height:20px;
   float:right;
   padding: 0px !important;
-  margin-top:30px;
   
 }
 .site-links ul li{
@@ -612,8 +613,36 @@ div#block-feedbackblock a:hover {
   }
 }
 @media only screen and (max-width: 991px) {
+  .we-mega-menu-ul.nav.nav-tabs{
+    margin-top: 50px;
+  }
+  .we-mega-menu-li > .we-megamenu-nolink{
+    width: 250px !important;
+    background: #1a1a1a !important;
+
+  }
+  .we-mega-menu-li > a{
+    width: 250px;
+    background: #1a1a1a;
+
+  }
   .contextual{
     display:none;
+    
+  }
+  .main.navbar {
+    background: #666;
+    width: 250px;
+  }
+  .site-notification{
+      display:none;
+
+  }
+  .navbar-we-mega-menu.navbar ul>li ul{
+    padding:0px !important;
+  }
+  .navbar-we-mega-menu.navbar ul>li ul li a{ 
+    padding-left: 15px !important;
   }
 }
 @keyframes shake {

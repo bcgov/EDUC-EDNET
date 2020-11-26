@@ -1,9 +1,9 @@
 (function ($) {
-    var tallestHeight = "0"
+    var tallestHeight = 0;
     $(".highlight-summary").each( function( index, element ){
         if($(this).height() >= tallestHeight){
             tallestHeight = $(this).height();
         }
     });
-    $(".highlight-summary").css("height",tallestHeight);
+    $(".highlight-summary").css("height",tallestHeight+40 + "px");
 }(jQuery));

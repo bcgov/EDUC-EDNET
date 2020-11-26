@@ -2,7 +2,7 @@
  * @file
  * Visual styles for Minimal_lite's sticky header.
  */
-.sticky-wrapper {
+ .sticky-wrapper {
   position: relative;
 }
 .onscroll.transparent-header-active .header-container.js-transparent-header .sticky-wrapper {
@@ -16,14 +16,14 @@
 }
 .onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed,
 .onscroll.fixed-header-enabled--scroll .header.js-fixed {
-  opacity: 1;
+/*  opacity: 1;
   position: fixed;
   z-index: 499;
   top: 0;
   width: 100%;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: transparent;
+  border-bottom-color: transparent;*/
 }
 .modal-open.onscroll.fixed-header-enabled--scroll-up.headroom--scroll-up .header.js-fixed,
 .modal-open.onscroll.fixed-header-enabled--scroll .header.js-fixed {
@@ -60,9 +60,11 @@
 .fixed-header-enabled.onscroll .header-third,
 .fixed-header-enabled.onscroll .header-first,
 .fixed-header-enabled.onscroll .header-container ul.menu {
+  /*
   -webkit-transition: ease-in-out 0.2s;
   -o-transition: ease-in-out 0.2s;
   transition: ease-in-out 0.2s;
+  */
 }
 .fixed-header-enabled.onscroll .header__container {
   padding: 5px 0;

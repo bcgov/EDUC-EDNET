@@ -280,7 +280,7 @@ function minimal_lite_preprocess_page(&$variables) {
 
   if (($header_first && !$header && $header_third) || (!$header_first && $header && $header_third)) {
     $variables['header_layout_columns_class'] = 'two-columns';
-    if ($variables['header_layout_container'] == 'container-fluid pl-xl-5 pr-xl-5') {
+    if ($variables['header_layout_container'] == 'container pl-xl-5 pr-xl-5') {
       $variables['header_first_grid_class'] = 'col-lg-8 col-xl-9';
       $variables['header_second_grid_class'] = 'col-lg-8 col-xl-9';
       $variables['header_third_grid_class'] = 'col-lg-4 col-xl-3';
@@ -307,7 +307,7 @@ function minimal_lite_preprocess_page(&$variables) {
     $variables['header_third_grid_class'] = 'col-12';
   }
 
-  if ($variables['header_layout_container'] == 'container-fluid pl-xl-5 pr-xl-5') {
+  if ($variables['header_layout_container'] == 'container pl-xl-5 pr-xl-5') {
     $variables['header_layout_container_class'] = 'full-width';
   } else {
     $variables['header_layout_container_class'] = 'fixed-width';
@@ -326,7 +326,7 @@ function minimal_lite_preprocess_page(&$variables) {
   $variables['main_content_layout_container'] = theme_get_setting('main_content_layout_container');
 
 
-  if ($variables['main_content_layout_container'] == "container-fluid pl-xl-5 pr-xl-5") {
+  if ($variables['main_content_layout_container'] == "container pl-xl-5 pr-xl-5") {
     $variables['main_content_paddings'] = "pr-xl-1 pl-xl-1";
     $variables['sidebar_paddings'] = "pr-xl-1 pl-xl-1";
   } else {

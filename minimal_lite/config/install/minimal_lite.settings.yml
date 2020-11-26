@@ -81,7 +81,7 @@ google_maps_key: ''
 header_background_color: 'region--dark-typography region--white-background'
 header_background_image_state: false
 header_blocks_paddings: false
-header_layout_container: 'container-fluid pl-xl-5 pr-xl-5'
+header_layout_container: 'container pl-xl-5 pr-xl-5'
 header_region_paddings: false
 header_top_animation_effect: 'no-animation'
 header_top_background_color: 'region--dark-typography region--white-background'

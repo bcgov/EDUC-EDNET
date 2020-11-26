@@ -413,6 +413,9 @@ li.we-mega-menu-li.dropdown-menu {
   opacity: 1;
 }
 /** logo **/
+.logo{
+  margin-top:-30px;
+}
 .logo img {
   max-width: 100%;
 }
@@ -637,6 +640,9 @@ div#block-feedbackblock a:hover {
   .site-notification{
       display:none;
 
+  }
+  .block-sitelinks{
+    margin-top:20px;
   }
   .navbar-we-mega-menu.navbar ul>li ul{
     padding:0px !important;

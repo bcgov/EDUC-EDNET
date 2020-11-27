@@ -150,6 +150,20 @@ header.clearfix.header.region--dark-typography.region--white-background.fixed-wi
 header.clearfix.header.region--dark-typography.region--white-background.full-width.one-column {
   background:#fff;
 }
+#main-content .container-fluid{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.path-frontpage #main-content section{
+  max-width: 100% !important;
+  padding: 0px !important;
+}
+#main-content section{
+  flex: 0 0 100% !important;
+  padding: 0 10% !important;
+  max-width: 100% !important;
+  margin: 0px 20px;
+}
 .content-top-highlighted .container-fluid{
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -541,7 +555,7 @@ div#block-feedbackblock a:hover {
 .view-front-page-highlight .view-footer {
   background: #fff;
 }
-.headroom--not-top.headroom--scroll-down .site-notification{
+.headroom--not-top .site-notification{
   display:none;
 }
 .site-notification {
@@ -650,6 +664,7 @@ div#block-feedbackblock a:hover {
   .main.navbar {
     background: #666;
     width: 250px;
+    margin-bottom: 0px;
   }
   .site-notification{
       display:none;
@@ -694,4 +709,15 @@ div#block-feedbackblock a:hover {
   
   .headroom--not-top .site-notification {
     display:none;
+  }
+
+  /** MEGAMENU STYLES **/
+  .we-mega-menu-submenu{
+    margin-left: -300px !important;
+  }
+  .menu-financial-services > div.we-mega-menu-submenu{
+    margin-left: -300px !important;
+  }
+  .we-mega-menu-submenu{
+    margin-left: -300px !important;
   }

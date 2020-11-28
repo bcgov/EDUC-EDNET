@@ -301,12 +301,12 @@
   {# main-content #}
   {% block main_content %}
     <div {% if main_content_id %}id="{{ main_content_id }}"{% endif %} class="clearfix main-content region--dark-typography region--white-background  {{ main_content_separator }}">
-      <div class="{{ main_content_layout_container }}">
+      <div class="">
         <div class="clearfix main-content__container">
           <div class="row">
-            <section class="{{ main_grid_class }} {{ main_content_paddings }}">
+            <section class="container {{ main_grid_class }}">
               {# main #}
-              <div class="clearfix main-content__section{{ (main_content_animations == "enabled") ? ' mt-no-opacity' : '' }}{{ (main_content_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (main_content_region_paddings) ? ' region--no-paddings' : '' }}"
+              <div class="clearfix main-content__section{{ (main_content_animations == "enabled") ? ' mt-no-opacity' : '' }}"
                 {% if main_content_animations == "enabled" %}
                   data-animate-effect="{{ main_content_animation_effect }}"
                 {% endif %}>

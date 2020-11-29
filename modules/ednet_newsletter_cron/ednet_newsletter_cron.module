@@ -36,7 +36,7 @@ function ednet_newsletter_cron_mail($key, &$message, $params) {
   
     $module = 'ednet_newsletter_cron';
     $key = 'create_article';
-    $to = 'EDNETDEV@Victoria1.gov.bc.ca';
+    $to = 'EDNETDL@Victoria1.gov.bc.ca';
     $params['message'] = $entity->get('body')->value;
     $params['node_title'] = $entity->label();
     $langcode = \Drupal::currentUser()->getPreferredLangcode();

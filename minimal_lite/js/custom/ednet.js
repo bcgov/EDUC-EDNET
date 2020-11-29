@@ -3,7 +3,6 @@
     $(".highlight-summary").each( function( index, element ){
         if($(this).height() >= tallestHeight){
             tallestHeight = $(this).height();
-            console.log(tallestHeight);
         }
     });
     $(".highlight-summary").css("height",tallestHeight+40 + "px");
@@ -12,7 +11,6 @@
         $(".highlight-summary").each( function( index, element ){
             if($(this).height() >= tallestHeight){
                 tallestHeight = $(this).height();
-                console.log(tallestHeight);
             }
         });
         $(".highlight-summary").css("height",tallestHeight+40 + "px");

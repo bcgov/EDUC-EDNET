@@ -140,7 +140,7 @@ div#block-views-block-job-postings-block-1 {
   border-radius: .5rem;
 }
 div#block-views-block-job-postings-block-1 .view-content{
-  height: 270px;
+  height: 130px;
   margin-bottom: 20px;
   overflow-y: scroll;
 }
@@ -765,7 +765,6 @@ div#block-feedbackblock a:hover {
 }
 .block-search .form-actions{
   background: #ccc;
-
 }
 
 .dropdown-content{

@@ -2,7 +2,7 @@
  * @file
  * Visual styles for Minimal_lite's search block.
  */
-.block-search form {
+ .block-search form {
   position: relative;
 }
 .block-search .form-item.form-type-search {
@@ -48,23 +48,10 @@
 .region--light-typography .block-search .form-actions:after {
   color: #ffffff;
 }
-.block-search input.form-submit {
-  background-color: transparent;
-  background: transparent;
-  min-width: 0;
-  position: relative;
-  z-index: 1;
-  height: 50px;
-  margin: 0;
-  padding: 0 20px;
-  text-indent: -9999px;
-  border: none;
-  box-shadow: none;
-}
+
 .block-search input.form-submit:focus,
 .block-search input.form-submit:hover {
-  outline: none;
-  background: transparent;
+  outline: #efefef;
 }
 
 /*Search blocks @colored-regions*/

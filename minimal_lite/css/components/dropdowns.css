@@ -72,9 +72,9 @@
 .dropdown-menu.show {
   opacity: 1;
 }
-.fixed-header-enabled.onscroll .dropdown-menu {
+/*.fixed-header-enabled.onscroll .dropdown-menu {
   margin-top: 18px;
-}
+}*/
 .region--white-background .dropdown-menu {
   background-color: rgba(255, 255, 255, 0.95);
 }

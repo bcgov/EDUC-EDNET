@@ -40,7 +40,7 @@
   height: 40px;
 }
 .dropdown.show .dropdown-toggle {
-  z-index: 10000;
+  z-index: 1;
   position: relative;
 }
 .dropdown-toggle .expanded-icon,
@@ -60,7 +60,6 @@
   display: block;
 }
 .dropdown-menu {
-  min-width: 335px;
   padding: 0;
   border: none;
   -webkit-box-shadow: none;

@@ -54,7 +54,7 @@ function ednet_newsletter_cron_mail($key, &$message, $params) {
 
 function ednet_newsletter_cron_cron() {
     $dispalyDateToday = date('l, M d, Y');
-    $highlightQuery = "SELECT nid, title, field_highlight_summary_value, DATE(FROM_UNIXTIME(created)) as created FROM node__field_highlight_summary,node_field_data WHERE node__field_highlight_summary.entity_id = node_field_data.nid AND node_field_data.promote = 1";
+    $highlightQuery = "SELECT nid, title, field_highlight_summary_value, DATE(FROM_UNIXTIME(created)) as created FROM node__field_highlight_summary,node_field_data WHERE node__field_highlight_summary.entity_id = node_field_data.nid AND node_field_data.promote = 1 ORDER By created ASC";
     // $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%y %M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) BETWEEN DATE_SUB( NOW( ) , INTERVAL 2 DAY ) AND CURDATE( ) AND type = 'article'";
     if(date('D') == 'Mon') { 
         $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%y %M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 3 DAY AND type = 'article'";

@@ -140,7 +140,7 @@ div#block-views-block-job-postings-block-1 {
   border-radius: .5rem;
 }
 div#block-views-block-job-postings-block-1 .view-content{
-  height: 270px;
+  height: 130px;
   margin-bottom: 20px;
   overflow-y: scroll;
 }
@@ -175,12 +175,22 @@ header.clearfix.header.region--dark-typography.region--white-background.full-wid
 #block-mainnavigation-2 {
   float: left;
   padding: 0px !important;
+  z-index: 10;
 }
 
 .search-block-form {
   float: left;
   padding: 0px !important;
   margin-top: 20px;
+}
+
+#search-block-form .form-submit:hover{
+  background: #ec794d;
+  color: white;
+}
+
+#search-block-form .form-submit{
+  padding:16px 40px 16px;
 }
 
 p.event-title {
@@ -441,16 +451,25 @@ li.we-mega-menu-li.dropdown-menu {
 }
 .we-mega-menu-submenu li.we-mega-menu-li:first-child>a, .we-mega-menu-submenu li.we-mega-menu-li:first-child>span{
   padding-top: 0;
-  color: orange;
-  height: 50px;
+
   border-bottom: 1px solid #666;
   vertical-align: bottom;
 
 }
 
+.we-mega-menu-submenu li > .we-megamenu-nolink{
+  color: #E6561E !important;
+  height: 40px;
+}
+ul > li > a.we-megamenu-nolink{
+  color: #666 !important;
+  height: 40px;
+}
+
 /** logo **/
 .logo{
   margin-top:-30px;
+  width: 100%;
 }
 .logo img {
   max-width: 100%;
@@ -541,7 +560,6 @@ div#block-feedbackblock a:hover {
   height:25px; 
 }
 .navbar-we-mega-menu{
-
   background-color: white !important;
 }
 
@@ -643,6 +661,11 @@ div#block-feedbackblock a:hover {
   margin: 0px 10% !important;
 }
 
+@media all screen and (min-width: 992px) {
+  .navbar-we-mega-menu .dropdown-menu{
+    min-width: 100px !important;
+  }
+}
 @media only screen and (max-width: 1170px) {
   
   .header-container, .content-top-highlighted__section, #main-content{
@@ -652,18 +675,41 @@ div#block-feedbackblock a:hover {
   }
 }
 @media only screen and (max-width: 991px) {
+  #block-topics{
+    display:none;
+  }
+
+  .region-we-mega-menu{
+    width: 50px !important;
+    top: -65px;
+    position: absolute;
+  }
   .we-mega-menu-ul.nav.nav-tabs{
     margin-top: 50px;
+  }
+  .we-mega-menu-ul>.dropdown-menu>.we-mega-menu-submenu{
+    width:250px !important;
+    margin-left: 0px !important;
+    
+  }
+  li.we-mega-menu-li{
+    width: 250px !important;
+    background: #1a1a1a !important;
+    color: #666 !important;
+    padding-left: 10px;
   }
   .we-mega-menu-li > .we-megamenu-nolink{
     width: 250px !important;
     background: #1a1a1a !important;
-
+    color: #fff !important
   }
   .we-mega-menu-li > a{
     width: 250px;
     background: #1a1a1a;
 
+  }
+  div.we-mega-menu-submenu{
+      margin-left: 0px !important;
   }
   .contextual{
     display:none;
@@ -672,7 +718,9 @@ div#block-feedbackblock a:hover {
   .main.navbar {
     background: #666;
     width: 250px;
+    height: 100%;
     margin-bottom: 0px;
+    
   }
   .site-notification{
       display:none;
@@ -681,16 +729,23 @@ div#block-feedbackblock a:hover {
   .block-sitelinks{
     margin-top:20px;
   }
-  .nav-tabs > .we-mega-menu-li{
-    background: #efefef !important;
+  .nav-tabs > .we-mega-menu-li a{
+    background: #333!important;
+    
+  }
+  .nav-tabs > .we-megamenu-nolink{
+    color: #666 !important;
   }
 
   .navbar-we-mega-menu.navbar ul>li ul{
     padding:0px !important;
   }
-  .navbar-we-mega-menu.navbar ul>li ul li a{ 
+  .navbar-we-mega-menu.navbar ul>li ul li{ 
     padding-left: 15px !important;
   }
+  .navbar-we-mega-menu.navbar ul>li ul li{
+    padding-left:10px;
+  } 
 }
 @keyframes shake {
 
@@ -725,14 +780,16 @@ div#block-feedbackblock a:hover {
   margin-left: -300px !important;
 }
 .menu-workplace > div.we-mega-menu-submenu{
-  margin-left: -300px !important;
+  margin-left: -325px !important; 
+}
+.menu-news{
+  width: 100px !important;
+}
+.menu-gov-links{
+  width: 140px !important;
+
 }
 
-
-/* Mobile menu */
-.mobile-main-menu li{
-  width:100%;
-}
 
 /**  Weather **/
 #block-weather h2.title{
@@ -753,6 +810,7 @@ div#block-feedbackblock a:hover {
   z-index: 101;
   top: 55px;
   width: 100px;
+  height:10px;
 }
 .topics-block .topics-button:after{
   color: #18a099;
@@ -765,10 +823,14 @@ div#block-feedbackblock a:hover {
 }
 .block-search .form-actions{
   background: #ccc;
-
 }
 
-.dropdown-content{
+.dropdown {
+  width:100px;
+  position: relative;
+  display: inline-block;
+}
+.topics-dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -778,8 +840,20 @@ div#block-feedbackblock a:hover {
   z-index: 1;
   float: left;
   width: 650px;
+  z-index: 1001;
 }
-
-.dropdown-content .views-row{
+.dropdown:hover .topics-dropdown-content {
+  display: block;
+}
+.topics-dropdown-content .topic{
   float:left;
+  padding:10px;
+  width: 33.33%;
+  border-bottom: 1px solid #ccc;
+}
+.topics-dropdown-content .topic:before{
+  float:left;
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02b";
+  color:#E6561E;
+  padding-right: 5px;
 }

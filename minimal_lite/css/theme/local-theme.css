@@ -313,6 +313,19 @@ nav.breadcrumb.mt-md-4 {
   margin-top: 0px;
 }
 
+.gov-links {
+  left: -215px;
+  top: 48px;
+}
+.info-sec-pri a{
+  padding-top: 0;
+  border-bottom: 1px solid #666;
+  vertical-align: bottom;
+  color: #E6561E !important;
+  height: 40px;
+}
+}
+
 /*accordion*/
 .ckeditor-accordion-container>dl dt>a:hover {
   background-color: #e6561e;

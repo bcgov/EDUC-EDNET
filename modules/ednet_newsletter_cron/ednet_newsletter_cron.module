@@ -36,8 +36,8 @@ function ednet_newsletter_cron_mail($key, &$message, $params) {
   
     $module = 'ednet_newsletter_cron';
     $key = 'create_article';
-    $to = 'EDNETDEV@Victoria1.gov.bc.ca';
-    //$to = 'EDNETDL@Victoria1.gov.bc.ca';
+    //$to = 'EDNETDEV@Victoria1.gov.bc.ca';
+    $to = 'EDNETDL@Victoria1.gov.bc.ca';
     $params['message'] = $entity->get('body')->value;
     $params['node_title'] = $entity->label();
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
@@ -58,9 +58,9 @@ function ednet_newsletter_cron_cron() {
     $highlightQuery = "SELECT nid, title, field_highlight_summary_value, DATE(FROM_UNIXTIME(created)) as created FROM node__field_highlight_summary,node_field_data WHERE node__field_highlight_summary.entity_id = node_field_data.nid AND node_field_data.promote = 1";
     // $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%y %M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) BETWEEN DATE_SUB( NOW( ) , INTERVAL 2 DAY ) AND CURDATE( ) AND type = 'article'";
     if(date('D') == 'Mon') { 
-        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 3 DAY AND type = 'article'";
+        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 3 DAY AND type = 'article' AND status = 1";
     } else {
-        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 1 DAY AND type = 'article'";
+        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 1 DAY AND type = 'article'AND status = 1";
     }
     $eventsQuery = "SELECT nid, title, DATE_FORMAT(node_revision__field_event_start_date.field_event_start_date_value, '%M %D at %T') as event_start_date FROM node_field_data, node_revision__field_event_start_date WHERE node_revision__field_event_start_date.entity_id = node_field_data.nid AND field_event_start_date_value >= DATE(NOW()) AND field_event_start_date_value <= (DATE(NOW()) + INTERVAL 7 DAY)";
     $database = \Drupal::database();
@@ -83,13 +83,13 @@ function ednet_newsletter_cron_cron() {
         <td style='width:80%'>
             <table>
                 <tr>
-                <td style='width: 50px; vertical-align:top; padding-top: 10px'><div style='border:1px solid #666; color:white; font-size: 18pt; background: #ff680d; height: 40px; width:40px; text-align:center'>$i</div></td>
+                <td style='width: 50px; vertical-align:top; padding-top: 10px'><div style='border:1px solid #666; color:white; font-size: 14pt; background: #ff680d; height: 40px; width:40px; text-align:center'>$i</div></td>
                     <td style='padding-left:15px;'>
                         <span
                             style='
                             font-family: arial !important;
                             color: #333;
-                            font-size: 18pt;
+                            font-size: 14pt;
                             font-weight: bold;
                             text-decoration: none;
                             '
@@ -98,7 +98,7 @@ function ednet_newsletter_cron_cron() {
                         style='
                             font-family: arial !important;
                             color: #333;
-                            font-size: 16pt;
+                            font-size: 12pt;
                             text-decoration: none;
                         
                         '
@@ -121,7 +121,7 @@ function ednet_newsletter_cron_cron() {
             style='
                 font-family: arial !important;
                 color: #333;
-                font-size: 14pt;
+                font-size: 12pt;
                 font-weight: bold;
                 text-decoration: none;
             '
@@ -135,7 +135,7 @@ function ednet_newsletter_cron_cron() {
             color: #333;
             text-decoration: none;
             width:100%;
-            font-size: 14pt;
+            font-size: 12pt;
             margin-top:10px;
             padding-top:10px;
         '> $staffPostsResult->created </span>
@@ -144,7 +144,7 @@ function ednet_newsletter_cron_cron() {
             style='
                 font-family: arial !important;
                 color: #333;
-                font-size: 12pt;
+                font-size: 10pt;
                 text-decoration: none;
                 margin-bottom: 10px;
             '>$staffPostsResult->field_highlight_summary_value</span> 
@@ -163,20 +163,20 @@ function ednet_newsletter_cron_cron() {
         style='
             font-family: arial !important;
             color: #333;
-            font-size: 16pt;
+            font-size: 12pt;
             font-weight: bold;
             text-decoration: none;
             margin-bottom:15px;
         '
         >
-            <a style='color:#000; text-decoration:none; font-size: 18pt' href='http://gww.bcedintra.gov.bc.ca/node/$eventsResult->nid'>$eventsResult->title</a>
+            <a style='color:#000; text-decoration:none; font-size: 14pt' href='http://gww.bcedintra.gov.bc.ca/node/$eventsResult->nid'>$eventsResult->title</a>
         </span>
         <br/>
         <span
         style='
             font-family: arial !important;
             color: #333;
-            font-size: 14pt;
+            font-size: 12pt;
             text-decoration: none;
             border-bottom: 1px solid #ccc;
             margin-bottom: 15px;
@@ -224,7 +224,7 @@ function ednet_newsletter_cron_cron() {
                         <table style="width:100%; background:#e9e9e9; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
                             <tr>
                                 <td style="width: 10%"></td>
-                                <td style="width: 80%; padding: 15px 0;  color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:left; ">Staff Announcements</td>
+                                <td style="width: 80%; padding: 15px 0;  color: #333; font-weight: bold; font-family:arial; font-size: 14pt; text-align:left; ">Staff Announcements</td>
                                 <td style="width: 10%"></td>
                             </tr>
                         </table>
@@ -234,7 +234,7 @@ function ednet_newsletter_cron_cron() {
                         <table style="width:100%; background:#e9e9e9; border-bottom: 1px solid #ccc; border-top: 1px solid #ccc;">
                             <tr>
                                 <td style="width: 10%"></td>
-                                <td style="width: 80%; padding: 15px 0; color: #333; font-weight: bold; font-family:arial; font-size: 18pt; text-align:left;">Upcoming Ministry Events</td>									
+                                <td style="width: 80%; padding: 15px 0; color: #333; font-weight: bold; font-family:arial; font-size: 14pt; text-align:left;">Upcoming Ministry Events</td>									
                                 <td style="width: 10%"></td>
                             </tr>
                         </table>

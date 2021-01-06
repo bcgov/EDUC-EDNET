@@ -58,9 +58,9 @@ function ednet_newsletter_cron_cron() {
     $highlightQuery = "SELECT nid, title, field_highlight_summary_value, DATE(FROM_UNIXTIME(created)) as created FROM node__field_highlight_summary,node_field_data WHERE node__field_highlight_summary.entity_id = node_field_data.nid AND node_field_data.promote = 1 ORDER BY created DESC";
     // $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%y %M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) BETWEEN DATE_SUB( NOW( ) , INTERVAL 2 DAY ) AND CURDATE( ) AND type = 'article'";
     if(date('D') == 'Mon') { 
-        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 3 DAY AND type = 'article' AND status = 1";
+        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 4 DAY AND type = 'article' AND status = 1";
     } else {
-        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 1 DAY AND type = 'article'AND status = 1";
+        $staffPostQurey = "SELECT nid, title, DATE_FORMAT(FROM_UNIXTIME(created), '%M %D %r') as created FROM node_field_data WHERE DATE(FROM_UNIXTIME(created)) >= NOW() - INTERVAL 2 DAY AND type = 'article'AND status = 1";
     }
     $eventsQuery = "SELECT nid, title, DATE_FORMAT(node_revision__field_event_start_date.field_event_start_date_value, '%M %D at %T') as event_start_date FROM node_field_data, node_revision__field_event_start_date WHERE node_revision__field_event_start_date.entity_id = node_field_data.nid AND field_event_start_date_value >= DATE(NOW()) AND field_event_start_date_value <= (DATE(NOW()) + INTERVAL 7 DAY)";
     $database = \Drupal::database();
